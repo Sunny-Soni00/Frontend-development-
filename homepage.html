@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DesigNest</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        .Homepage {
+            width: 100%; /* Make it responsive */
+            height: 1024px; /* Keep the height fixed */
+            position: relative;
+            background: white;
+        }
+        .Designest {
+            width: 343px;
+            height: 58px;
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            top: 46px;
+            position: absolute;
+            color: black;
+            font-size: 64px;
+            font-family: "Inria Serif";
+            font-weight: 700;
+            word-wrap: break-word;
+            text-align: center;
+        }
+        /* Button Styles */
+        .button {
+            width: 120px;
+            height: 29px;
+            border-radius: 1000px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 29px;
+        }
+        .Heart, .ShoppingCart, .User {
+            background-size: cover;
+            position: absolute;
+        }
+        .Heart {
+            left: calc(100% - 210px); /* Adjusted for right alignment */
+            top: 189px;
+            background-image: url('/mnt/data/image.png'); /* Replace with Heart icon */
+        }
+        .ShoppingCart {
+            left: calc(100% - 150px); /* Adjusted for right alignment */
+            top: 189px;
+            background-image: url('/mnt/data/image.png'); /* Replace with Shopping Cart icon */
+        }
+        .User {
+            left: calc(100% - 90px); /* Adjusted for right alignment */
+            top: 189px;
+            background-image: url('/mnt/data/image.png'); /* Replace with User Profile icon */
+        }
+        /* Clothes, Collection, Customization Sections */
+        .section {
+            width: 30%; /* Responsive width */
+            height: 333px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px; /* Add margin for spacing */
+        }
+        .DiscoverUniqueCustomizableDesignsForYourEverydayFashionAndLifestyleNeeds {
+            width: 90%; /* Responsive width */
+            left: 50%;
+            transform: translateX(-50%); /* Center text */
+            top: 269px;
+            position: absolute;
+            color: black;
+            font-size: 24px;
+            font-family: Inria Serif;
+            font-weight: 700;
+            text-align: center; /* Center text */
+        }
+        .ContactEmailSupportDesignestComPhone11234567890 {
+            width: 90%; /* Responsive width */
+            left: 50%;
+            transform: translateX(-50%); /* Center text */
+            top: 980px;
+            position: absolute;
+            color: black;
+            font-size: 24px;
+            font-family: Inria Serif;
+            font-weight: 700;
+            text-align: center; /* Center text */
+        }
+        .SearchBox {
+            width: 60%; /* Adjusted for responsiveness */
+            height: 34px;
+            left: 55%;
+            transform: translateX(-50%); /* Center the search box */
+            top: 200px;
+            position: absolute;
+            display: flex; /* Flexbox for alignment */
+        }
+        .Rectangle29 {
+            width: 301px;
+            height: 517px;
+            left: calc(100% - 320px); /* Adjusted for right alignment */
+            top: 399px;
+            position: absolute;
+            background: #D9D9D9;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="Homepage">
+        <hr><div class="Designest">DesigNest</div>
+        <hr style="position: absolute; top: 120px; width: 100%; border: 1px solid black;">
+        <div class="Group1" style="width: 120px; height: 29px; left: 17px; top: 200px; position: absolute; border-radius: 1000px">
+            <div class="Rectangle1" style="width: 120px; height: 29px; background: #FFFF00; border-radius: 1000px; border: 1px black solid"></div>
+            <div class="Login" style="left: 38px; top: 6px; position: absolute; color: black; font-size: 15px; font-family: Itim; font-weight: 400;">Login</div>
+        </div>
+        <div class="Component1" style="width: 120px; height: 29px; left: 181px; top: 200px; position: absolute">
+            <div class="Rectangle1" style="width: 120px; height: 29px; background: rgba(255, 4.25, 4.25, 0.96); border-radius: 1000px; border: 1px black solid"></div>
+            <div class="Signup" style="left: 42px; top: 6px; position: absolute; color: black; font-size: 15px; font-family: Itim; font-weight: 400;">Signup</div>
+        </div>
+        <div class="Group25" style="display: flex; align-items: center; gap: 10px;">
+            <div class="Heart" style="width: 48px; height: 40px; display: inline-flex;">
+                <img src="heart.png" alt="Heart Icon" style="width: 100%; height: 100%;">
+            </div>
+            <div class="ShoppingCart" style="width: 48px; height: 48px; display: inline-flex;">
+                <img src="Shopping .png" alt="Shopping Cart Icon" style="width: 100%; height: 100%;">
+            </div>
+            <div class="User" style="width: 48px; height: 48px; display: inline-flex;">
+                <img src="user.png" alt="User Icon" style="width: 100%; height: 100%;">
+            </div>
+        </div>
+        </div>
+        <div class="Clothes" style="left: 175px; top: 346px; position: absolute; color: black; font-size: 24px; font-family: Inria Serif; font-weight: 700;">Clothes</div>
+        <div class="Bundles" style="left: 168px; top: 643px; position: absolute; color: black; font-size: 24px; font-family: Inria Serif; font-weight: 700;">Bundles</div>
+        <div class="Customization" style="left: calc(100% - 300px); top: 346px; position: absolute; color: black; font-size: 24px; font-family: Inria Serif; font-weight: 700;">Customization</div>
+        <!-- images for clothes -->
+        <div class="Photo" style="left: 107px; top: 372px; position: absolute;">
+            <img src="cloth1.png" alt="cloth1" style="width: 177px; height: 165px;">
+        </div>
+        <div class="Photo" style="left: 450px; top: 372px; position: absolute;">
+          <img src="jeans.png" alt="cloth2" style="width: 177px; height: 165px;">
+      </div>
+               <div class="Photo" style="left: 774px; top: 372px; position: absolute;">
+            <img src="cloth2.png" alt="cloth3" style="width: 177px; height: 165px;">
+        </div>
+        <!-- images for bundles -->
+        <div class="Photo" style="left: 107px; top: 668px; position: absolute;">
+            <img src="Naruto .png" alt="bundle1" style="width: 177px; height: 165px;">
+        </div>
+        <div class="Photo" style="left: 450px; top: 668px; position: absolute;">
+          <img src="bundle3.png" alt="bundle2" style="width: 177px; height: 165px;">
+      </div>
+        <div class="Photo" style="left: 774px; top: 668px; position: absolute;">
+          <img src="bundle.png" alt="cloth3" style="width: 177px; height: 165px;">
+      </div>
+      <div class="SearchBox">
+        <input type="text" class="search-bar" placeholder="Search..." style="width: 70%; height: 100%; border-radius: 1000px; border: 1px solid black; padding-left: 10px;">
+    </div>
+    <div class="Rectangle29" style=" top: 372px; position: absolute;">
+    </div>
+</div>
+<div class="Rectangle29" style="top: 372px; position: absolute;">
+    <img src="customized cloth.png" alt="Customize Cloth" style="width: 301px; height: 517px;">
+</div>
+<footer>
+    <div class="Rectangle27" style="width: 100%; height: 60px; left: 0px; top: 964px; position: absolute; background: #D9D9D9">
+        <div class="Contact" style="text-align: center; padding-top: 20px;">
+            Contact: Email Support at designest.com | Phone: 11234567890
+        </div>
+    </div>
+</footer>
+</body>
+</html>

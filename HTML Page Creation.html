@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shopping page</title>
+    <link rel="icon" href="C:\Users\Kshitiz Trigunayat\Downloads\Media Club.jpg" type="image/jpeg">
+    <style>
+        body {
+            background-color: lightblue;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            margin-bottom: 20px;
+
+        }
+        navigation {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: yellow;
+            color: rgb(234, 133, 32);
+            font-size: 20px;
+            border: none;
+            margin: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: lightblue(234, 133, 32);
+            color: white;
+        }
+        .main-content {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .line {
+            width: 80%;
+            height: 5px;
+            background-color: white;
+            margin: 20px auto;
+        }
+        .media-item {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+        }
+        h1 {
+            color: rgb(234, 133, 32);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shopping website</h1>
+        <navigation>
+            <a href="https://www.flipkart.com/account/login?ret=/"><button class="button">login</button></a>
+            <button class="button">become a seller</button>
+            <input type="search" placeholder="search" style="padding: 10px; margin: auto; border-radius: 50px;">
+            <button class="button">cart</button>
+            <button class="button">order</button>
+            <button class="button" onclick="location.href='#';">profile</button>
+        </navigation>
+    </header>
+
+    <div class="line"></div>
+
+    <section class="main-content">
+        <div>
+            <a href="https://www.flipkart.com/ckf/czl/~cs-vr9bvr8ro9/pr?sid=ckf%2Cczl&collection-tab-name=QLED-Smart-TVs&pageCriteria=default&sort=popularity&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyLigrk3LDAwMCBPZmYgb24gRXhjaCoiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJCZXN0IG9mIFFMRUQgVFZzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiVFZTR1pIWU4yTVBSU0haViIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX19fX0%3D">
+                <img class="media-item" src="/img1.png" alt="Tv" width="300" height="300">
+            </a>
+            <a href="https://www.flipkart.com/gaming-accesories/controllers/gamepads/pr?sid=4rr%2Ckm5%2Cr39%2Ca7g&sort=popularity&p%5B%5D=facets.fulfilled_by%255B%255D%3DF-Assured&p%5B%5D=facets.price_range.from%3D699&p%5B%5D=facets.price_range.to%3DMax&param=97&hpid=DEeH2PxQD6E3z2atT9Kv4qp7_Hsxr70nj65vMAAFKlc%3D&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTY5OSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkFDQ0ZaNTUyQ0Q1VlBORlEiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJHYW1lcGFkcyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D">
+            <img class="media-item" src="/img2.png" alt="Gamepad" width="300" height="300"></a>
+
+            <a href="https://www.flipkart.com/mobile-accessories/mobile-flashes/pr?sid=tyy%2C4mr%2Ckcr&p%5B%5D=facets.price_range.from%3DMin&p%5B%5D=facets.price_range.to%3D10000&hpid=U0P4Wa3BcLP0Ezn9xtpeYap7_Hsxr70nj65vMAAFKlc%3D&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTk5OSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkFDQ0dIV0VFOVRBRFlKTlYiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJGbGFzaCBSaW5nIExpZ2h0cyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D">
+            <img class="media-item" src="/img3.png" alt="Ring light" width="300" height="300">
+            </a>
+        </div>
+
+        <div class="line"></div>
+
+        <div>
+            <img class="media-item" src="/img1.png" alt="Tv" width="300" height="300">
+            <img class="media-item" src="/img2.png" alt="Gamepad" width="300" height="300">
+            <img class="media-item" src="/img3.png" alt="Ring light" width="300" height="300">
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section>
+        <div align="center">
+            <video src="/15 sec.mp4" width="320" height="240" controls></video>
+        </div>
+    </section>
+    <div class="line"></div>
+    <footer>
+        <div>
+            <h1 align="center"><a href="https://corporate.flipkart.net/corporate-home" style="text-decoration: none; color: inherit;">About</a></h1>
+            <a href="https://corporate.flipkart.net/corporate-home" style="text-decoration: none; color: inherit;"><p style="color: black;">For more download our app or Contact</p></a>
+        </div>
+
+
+    </footer>
+
+    
+</body>
+</html>
