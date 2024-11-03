@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesigNest - Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Itim', cursive;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff7f50;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: #ff7f50;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            display: flex;
+            padding: 50px 10%;
+            justify-content: center; /* Center align the items horizontally */
+            align-items: center; /* Center align the items vertically */
+        }
+
+        .profile-info {
+            flex: 1;
+            margin-right: 10px; /* Space between text and image */
+            max-width: 300px; /* Ensure the details box size is maintained */
+        }
+
+        .profile-info h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center; /* Center align the header */
+        }
+
+        .profile-info label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: center; /* Center align labels */
+        }
+
+        .profile-info input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px; /* Reduced margin for closer positioning */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center; /* Center align input text */
+        }
+
+        .profile-picture {
+            width: 210px; /* Updated width */
+            height: 210px; /* Updated height */
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #ff7f50;
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Center align image within the circle */
+            align-items: center; /* Center align image vertically */
+            margin-left: 80px; /* Adjusted space to position more right */
+            margin-top: 50px; /* Adjusted space to position more down */
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%; /* Ensure the image fits well in the circle */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">DesigNest</div>
+        <div class="header-icons">
+            <a href="index.html">🏠 Home</a>
+            <a href="cart.html">🛒 Cart</a>
+            <a href="profile.html">👤 Profile</a>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="profile-info">
+            <h2>User Profile</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" value="JohnDoe" readonly>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="johndoe@example.com" readonly>
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" value="+1234567890" readonly>
+        </div>
+
+        <div class="profile-picture">
+            <img src="https://via.placeholder.com/220" alt="User Picture"> <!-- Updated image size -->
+        </div>
+    </div>
+</body>
+</html>

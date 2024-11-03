@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesigNest - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Itim', cursive;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff7f50;
+        }
+
+        .search-bar {
+    flex-grow: 1;
+    margin: 0 15px;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 8px 15px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 25px; /* Curved edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.search-bar input[type="text"]:focus {
+    outline: none;
+    border-color: #ff7f50; /* Highlighted border color */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: #ff7f50;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 10%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://tse2.mm.bing.net/th?id=OIG2.zV59dWbrUCgnGg6ywwQ8&pid=ImgGn') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: left;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #ff7f50;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        /* Collections Section */
+        .collections {
+            padding: 50px 10%;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .collections h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .product-info h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-family: 'Itim', cursive;
+        }
+
+        .product-info p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .product-info .price {
+            color: #ff7f50;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .customize-btn {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .customize-btn:hover {
+            background-color: #e05858;
+        }
+
+        /* Subcategories Section */
+        .subcategories {
+            padding: 50px 10%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .subcategories h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .subcategory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .subcategory-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .subcategory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .subcategory-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .subcategory-card h4 {
+            font-size: 20px;
+            color: #333;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .subcategory-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #f5f5f5;
+            padding: 30px 10%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">DesigNest</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+        </div>
+        <div class="header-icons">
+            <a href="#home">🏠 Home</a>
+            <a href="#cart">🛒 Cart</a>
+            <a href="#profile">👤 Profile</a>
+        </div>
+    </header>    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Express Your Unique Style</h1>
+            <p>Discover fashion, themed bundles, and unleash your creativity with our customization options.</p>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <h2>Explore more</h2>
+        <div class="product-grid">
+            <!-- Clothes -->
+            <div class="product-card">
+                <img src="https://tse4.mm.bing.net/th?id=OIG3.eNTF9y.Tcwlgncsv8iqa&pid=ImgGn" alt="Clothes">
+                <div class="product-info">
+                    <h3>Clothes</h3>
+                    <p>Stylish and comfortable clothes for every season.</p>
+                    <p class="price">From ₹2999</p>
+                </div>
+            </div>
+
+            <!-- Costume Bundles -->
+            <div class="product-card">
+                <img src="https://tse2.mm.bing.net/th?id=OIG1.wyrBBNc3rNdY51D61vkr&pid=ImgGn" alt="Bundles">
+                <div class="product-info">
+                    <h3>Bundles</h3>
+                    <p>Curated costume bundles for unique styles.</p>
+                    <p class="price">From ₹4999</p>
+                </div>
+            </div>
+
+            <!-- Customization Option -->
+            <div class="product-card">
+                <img src="https://tse4.mm.bing.net/th?id=OIG4.Wa0SV8dmXpiukZ8PN9Jx&pid=ImgGn" alt="Customization">
+                <div class="product-info">
+                    <h3>Customization</h3>
+                    <p>Design your own outfits with our interactive customization tool.</p>
+                    <button class="customize-btn">Customize Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subcategories Section -->
+    <section class="subcategories">
+        <h3>Recommendations for You</h3>
+        <div class="subcategory-grid">
+                       <!-- Subcategory Card Examples -->
+            <div class="subcategory-card">
+                <img src="https://th.bing.com/th/id/OIP.bD3dT2CazF4__z4TJVz8FQHaHR?rs=1&pid=ImgDetMain" alt="T-Shirts">
+                <h4>T-Shirts</h4>
+                <p>Casual & trendy styles</p>
+            </div>
+            <div class="subcategory-card">
+                <img src="https://i.pinimg.com/originals/5e/39/0b/5e390ba88c4de2574ed88b756d28c9be.jpg" alt="Summer Dresses">
+                <h4>Summer Dresses</h4>
+                <p>Light & colorful options</p>
+            </div>
+            <div class="subcategory-card">
+                <img src="https://shop.ev2sportswear.com/wp-content/uploads/2020/03/Bundle-1-NAVY-POLO.jpg" alt="Sportswear Bundle">
+                <h4>Sportswear Bundle</h4>
+                <p>For an active lifestyle</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>DesigNest &copy; 2024. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
