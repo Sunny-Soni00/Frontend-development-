@@ -34,26 +34,25 @@
         }
 
         .search-bar {
-    flex-grow: 1;
-    margin: 0 15px;
-}
+            flex-grow: 1;
+            margin: 0 15px;
+        }
 
-.search-bar input[type="text"] {
-    width: 100%;
-    padding: 8px 15px;
-    font-size: 18px;
-    border: 2px solid #ddd;
-    border-radius: 25px; /* Curved edges */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s, border-color 0.3s;
-}
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 8px 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
 
-.search-bar input[type="text"]:focus {
-    outline: none;
-    border-color: #ff7f50; /* Highlighted border color */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
+        .search-bar input[type="text"]:focus {
+            outline: none;
+            border-color: #ff7f50;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
 
         .header-icons {
             display: flex;
@@ -78,12 +77,14 @@
 
         .cart-item {
             display: flex;
+            align-items: center;
             justify-content: space-between;
             padding: 15px;
             border: 1px solid #ccc;
             margin-bottom: 20px;
             border-radius: 5px;
             background-color: #ffffff;
+            position: relative;
         }
 
         .cart-item img {
@@ -105,6 +106,27 @@
         .cart-item p {
             margin: 5px 0;
             color: #777;
+        }
+
+        .rating {
+            font-size: 14px;
+            color: #ff7f50;
+            margin-top: 8px;
+        }
+
+        .remove-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-end;
+            margin-left: 15px;
+        }
+
+        .remove-btn:hover {
+            background-color: #d43f3f;
         }
 
         .total-price {
@@ -148,7 +170,7 @@
 
     <!-- Cart Section -->
     <div class="cart-container">
-        <h2>Your Cart</h2>
+        <h2>Cart items</h2>
 
         <!-- Example Cart Item -->
         <div class="cart-item">
@@ -157,7 +179,10 @@
                 <h3>Product Name</h3>
                 <p>Price: ₹250</p>
                 <p>Quantity: 1</p>
+                <!-- Display pre-existing rating -->
+                <div class="rating">Rating: ⭐⭐⭐⭐☆ (4.0)</div>
             </div>
+            <button class="remove-btn">Remove from Cart</button>
         </div>
 
         <div class="cart-item">
@@ -165,14 +190,17 @@
             <div class="cart-item-details">
                 <h3>Product Name 2</h3>
                 <p>Price: ₹150</p>
-                <p>Quantity: 2</p>
+                <p>Quantity: 1</p>
+                <!-- Display pre-existing rating -->
+                <div class="rating">Rating: ⭐⭐⭐☆☆ (3.0)</div>
             </div>
+            <button class="remove-btn">Remove from Cart</button>
         </div>
 
         <!-- Add more cart items as needed -->
         
         <div class="total-price">Total: ₹400</div>
-        <a href="payment.html" class="checkout-button">Proceed to Checkout</a>
+        <a href="payment.html" class="checkout-button">Order now</a>
     </div>
 
 </body>

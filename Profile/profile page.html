@@ -53,56 +53,56 @@
         .profile-container {
             display: flex;
             padding: 50px 10%;
-            justify-content: center; /* Center align the items horizontally */
-            align-items: center; /* Center align the items vertically */
+            justify-content: center;
+            align-items: center;
         }
 
         .profile-info {
             flex: 1;
-            margin-right: 10px; /* Space between text and image */
-            max-width: 300px; /* Ensure the details box size is maintained */
+            margin-right: 10px;
+            max-width: 300px;
         }
 
         .profile-info h2 {
             font-size: 28px;
             margin-bottom: 20px;
             color: #333;
-            text-align: center; /* Center align the header */
+            text-align: center;
         }
 
         .profile-info label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            text-align: center; /* Center align labels */
+            text-align: center;
         }
 
         .profile-info input {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px; /* Reduced margin for closer positioning */
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            text-align: center; /* Center align input text */
+            text-align: center;
         }
 
         .profile-picture {
-            width: 210px; /* Updated width */
-            height: 210px; /* Updated height */
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border: 4px solid #ff7f50; /* Adjusted border width to be more visible */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 80px;
+            margin-top: 70px;
             overflow: hidden;
-            border: 2px solid #ff7f50;
-            display: flex; /* Flexbox for centering */
-            justify-content: center; /* Center align image within the circle */
-            align-items: center; /* Center align image vertically */
-            margin-left: 80px; /* Adjusted space to position more right */
-            margin-top: 50px; /* Adjusted space to position more down */
+            background-color: #fff; /* Ensures a consistent background */
         }
 
         .profile-picture img {
             width: 100%;
-            height: auto;
-            border-radius: 50%; /* Ensure the image fits well in the circle */
+            height: 100%;
+            object-fit: cover; /* Ensures the image fits the container without extra space */
         }
 
     </style>
@@ -134,7 +134,7 @@
         </div>
 
         <div class="profile-picture">
-            <img src="https://via.placeholder.com/220" alt="User Picture"> <!-- Updated image size -->
+            <img src="https://via.placeholder.com/200" alt="User Picture">
         </div>
     </div>
 </body>
