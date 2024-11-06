@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesigNest - Customization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Itim', cursive;
+            background-color: #f4f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff7f50;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: #ff7f50;
+        }
+
+        /* Main Content */
+        .customization-container {
+            display: flex;
+            padding: 50px 10%;
+            gap: 40px;
+            flex: 1;
+        }
+
+        /* Sidebar */
+        .customization-sidebar {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+        .sidebar-section select,
+        .sidebar-section input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Preview Area */
+        .preview-area {
+            flex: 1.5;
+            background-color: #ffffff;
+            border: 2px solid #ff7f50;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+        }
+
+        /* Control Panel */
+        .control-panel {
+            padding: 20px 10%;
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+
+        .control-panel button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff7f50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .control-panel button:hover {
+            background-color: #e76e3f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffffff;
+            padding: 20px 10%;
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">DesigNest</div>
+        <div class="header-icons">
+            <a href="index.html">🏠 Home</a>
+            <a href="store.html">🏪 Sell</a>
+            <a href="cart.html">🛒 Cart</a>
+            <a href="profile.html">👤 Profile</a>
+        </div>
+    </header>
+
+    <!-- Customization Section -->
+    <div class="customization-container">
+
+        <!-- Customization Sidebar -->
+        <div class="customization-sidebar">
+            <div class="sidebar-section">
+                <label for="clothType">Cloth Type</label>
+                <select id="clothType">
+                    <option value="tshirt">T-Shirt</option>
+                    <option value="hoodie">Hoodie</option>
+                    <option value="jacket">Jacket</option>
+                </select>
+            </div>
+
+            <div class="sidebar-section">
+                <label for="color">Color</label>
+                <select id="color">
+                    <option value="#ff7f50">Coral</option>
+                    <option value="#333333">Dark Grey</option>
+                    <option value="#ffffff">White</option>
+                    <option value="#000000">Black</option>
+                </select>
+            </div>
+
+            <div class="sidebar-section">
+                <label for="size">Size</label>
+                <input type="text" id="size" list="sizeOptions" placeholder="Select or type a custom size" style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
+                <datalist id="sizeOptions">
+                    <option value="Small"></option>
+                    <option value="Medium"></option>
+                    <option value="Large"></option>
+                    <option value="Extra Large"></option>
+                </datalist>
+            </div>
+            
+            <div class="sidebar-section">
+                <label for="pattern">Pattern</label>
+                <select id="pattern">
+                    <option value="plain">Plain</option>
+                    <option value="striped">Striped</option>
+                    <option value="checkered">Checkered</option>
+                    <option value="graphic">Graphic</option>
+                </select>
+            </div>
+
+            <div class="sidebar-section">
+                <label for="position">Position</label>
+                <select id="position">
+                    <option value="front">Place on Front</option>
+                    <option value="back">Place on Back</option>
+                </select>
+            </div>
+
+            <div class="sidebar-section">
+                <label for="uploadImage">Upload Image for Printing</label>
+                <input type="file" id="uploadImage">
+            </div>
+        </div>
+
+        <!-- Preview Area -->
+        <div class="preview-area">
+            <img src="https://via.placeholder.com/250" alt="Preview" class="preview-image">
+        </div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <button>Save and Add to Cart</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2023 DesigNest. All rights reserved. | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
+    </footer>
+
+</body>
+</html>
