@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesigNest - Seller Product Listing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Itim', cursive;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff7f50;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: #ff7f50;
+        }
+
+        /* Page Content Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        /* Fix size for the description textarea */
+        textarea {
+            height: 150px; /* Fixed height */
+            resize: none;  /* Prevent resizing */
+        }
+
+        button {
+            background-color: #ff7f50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #f5f5f5;
+            padding: 30px 10%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">DesigNest</div>
+        <div class="header-icons">
+            <a href="home page.html">🏠 Home</a>
+            <a href="seller page.html">🏪 Sell</a>
+            <a href="cart page.html">🛒 Cart</a>
+            <a href="profile page.html">👤 Profile</a>
+        </div>
+    </header>
+
+    <!-- Seller Product Listing Form -->
+    <div class="container">
+        <div class="form-container">
+            <h1>List a Product for Sale</h1>
+            <form action="payment page.html">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required min="100" step="50">
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Shoes">Shoes</option>
+                    <option value="Others">Others</option>
+                </select>
+
+                <label for="product-image">Upload Image:</label>
+                <input type="file" id="product-image" name="product-image" accept="image/*" required>
+
+                <button type="submit">Submit Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 DesigNest. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
