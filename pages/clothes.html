@@ -84,6 +84,10 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-right: 20px;
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
         }
 
         .sidebar h3 {
@@ -128,6 +132,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             overflow: hidden;
+            position: relative;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -162,11 +167,25 @@
             color: #ff7f50;
         }
 
-        /* Rating style */
-        .rating {
-            color: #ffdd00;
-            font-size: 16px;
-            margin-bottom: 5px;
+        .add-to-cart {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #e06f4c;
         }
     </style>
 </head>
@@ -183,6 +202,8 @@
             <a href="seller page.html">🏪 Sell</a>
             <a href="cart page.html">🛒 Cart</a>
             <a href="profile page.html">👤 Profile</a>
+            <a href="login page.html">🔑 Login</a>
+            <a href="signup page.html">📝 Signup</a>
         </div>
     </header>    
 
@@ -210,69 +231,11 @@
         </div>
 
         <!-- Clothes Gallery -->
-        <div class="clothes-gallery">
-            <!-- Clothing Item 1 -->
-            <div class="clothes-card">
-                <img src="https://via.placeholder.com/200" alt="Clothes 1">
-                <div class="clothes-info">
-                    <h3>Casual T-Shirt</h3>
-                    <div class="rating">★★★★☆</div>
-                    <p>A comfortable t-shirt for daily wear.</p>
-                    <p class="price">₹799</p>
-                </div>
-            </div>
-            <!-- Clothing Item 2 -->
-            <div class="clothes-card">
-                <img src="https://via.placeholder.com/200" alt="Clothes 2">
-                <div class="clothes-info">
-                    <h3>Denim Jacket</h3>
-                    <div class="rating">★★★★★</div>
-                    <p>Stylish denim jacket for all occasions.</p>
-                    <p class="price">₹2499</p>
-                </div>
-            </div>
-            <!-- Clothing Item 3 -->
-            <div class="clothes-card">
-                <img src="https://via.placeholder.com/200" alt="Clothes 3">
-                <div class="clothes-info">
-                    <h3>Classic Jeans</h3>
-                    <div class="rating">★★★★☆</div>
-                    <p>Perfect fit jeans for a trendy look.</p>
-                    <p class="price">₹1999</p>
-                </div>
-            </div>
-            <!-- Clothing Item 4 -->
-            <div class="clothes-card">
-                <img src="https://via.placeholder.com/200" alt="Clothes 4">
-                <div class="clothes-info">
-                    <h3>Hoodie</h3>
-                    <div class="rating">★★★★☆</div>
-                    <p>Cozy hoodie for chilly days.</p>
-                    <p class="price">₹1499</p>
-                </div>
-            </div>
-            <!-- Clothing Item 5 -->
-            <div class="clothes-card">
-                <img src="https://via.placeholder.com/200" alt="Clothes 5">
-                <div class="clothes-info">
-                    <h3>Sweatshirt</h3>
-                    <div class="rating">★★★☆☆</div>
-                    <p>Soft sweatshirt for ultimate comfort.</p>
-                    <p class="price">₹1299</p>
-                </div>
-            </div>
-            <!-- Clothing Item 6 -->
-            <div class="clothes-card">
-                <img src="https://via.placeholder.com/200" alt="Clothes 6">
-                <div class="clothes-info">
-                    <h3>Summer Dress</h3>
-                    <div class="rating">★★★★★</div>
-                    <p>Lightweight dress perfect for summer outings.</p>
-                    <p class="price">₹1999</p>
-                </div>
-            </div>
+        <div class="clothes-gallery" id="clothing-container">
+            <!-- Clothing items will be dynamically inserted here by JavaScript -->
         </div>
     </div>
 
+    <script src="clothes.js"></script>
 </body>
 </html>

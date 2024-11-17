@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       background-color: #f4f4f4;
+    }
+
+    /* Header Section */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ff7f50;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 15px;
+    }
+
+    .search-bar input[type="text"] {
+      width: 100%;
+      padding: 8px 15px;
+      font-size: 18px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .search-bar input[type="text"]:focus {
+      outline: none;
+      border-color: #ff7f50;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header-icons a {
+      color: #333;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .header-icons a:hover {
+      color: #ff7f50;
     }
 
     .container {
@@ -18,6 +85,7 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       width: 400px;
+      margin-top: 100px; /* Adjusted to fit below the fixed header */
     }
 
     h1 {
@@ -25,9 +93,7 @@
       margin-bottom: 30px;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
+    input[type="text"], input[type="email"], input[type="password"] {
       width: 100%;
       padding: 15px;
       margin: 5px 0 20px 0;
@@ -57,13 +123,22 @@
   </style>
 </head>
 <body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">DesigNest</div>
+    <div class="header-icons">
+      <a href="home page.html">🏠 Home</a>
+      <a href="seller page.html">🏪 Sell</a>
+      <a href="cart page.html">🛒 Cart</a>
+      <a href="profile page.html">👤 Profile</a>
+      <a href="login page.html">🔑 Login</a>
+      <a href="signup page.html">📝 Signup</a>
+    </div>
+  </header>
+<br><br>
   <div class="container">
     <h1>Login</h1>
-    <form>
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-      </div>
+    <form id="loginForm">
       <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
@@ -72,9 +147,56 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
       </div>
-      <button type="submit"  onclick="location.href='home page.html'">Login</button>
+      <!-- Error messages below the password field -->
+      <p id="errorMessage" class="error-message"></p>
+      <button type="submit">Login</button>
       <p class="signup">Don't have an account? <a href="signup page.html">Sign up</a></p>
     </form>
   </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage'); // Single error message placeholder
+
+      // Clear previous error messages
+      errorMessage.style.display = 'none';
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        if (response.ok) {
+          // Login successful, redirect to homepage
+          location.href = 'home page.html';
+        } else {
+          // Login failed, display error message below password
+          const errorData = await response.json();
+
+          if (errorData.error === 'invalid_email') {
+            errorMessage.textContent = 'Invalid email address.';
+          } else if (errorData.error === 'incorrect_password') {
+            errorMessage.textContent = 'Incorrect password.';
+          } else {
+            errorMessage.textContent = 'Invalid email or password.';
+          }
+
+          errorMessage.style.display = 'block';
+        }
+      } catch (error) {
+        console.error('There was a problem with the login operation:', error);
+        errorMessage.textContent = 'An error occurred. Please try again.';
+        errorMessage.style.display = 'block'; // Ensure the error message is visible
+      }
+    });
+  </script>
 </body>
 </html>

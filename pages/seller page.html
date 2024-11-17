@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DesigNest - Seller Product Listing</title>
+    <title>Sell Product</title>
     <style>
         * {
             margin: 0;
@@ -138,7 +138,7 @@
     <div class="container">
         <div class="form-container">
             <h1>List a Product for Sale</h1>
-            <form action="payment page.html">
+            <form>
                 <label for="product-name">Product Name:</label>
                 <input type="text" id="product-name" name="product-name" required>
 
@@ -159,12 +159,53 @@
                 <label for="product-image">Upload Image:</label>
                 <input type="file" id="product-image" name="product-image" accept="image/*" required>
 
-                <button type="submit" onclick="location.href='home page.html'">Submit Product</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
+                                <button type="submit">Submit Product</button>
+                </form>
+                </div>
+                </div>
+                <script>
+                    document.getElementById('product-form').addEventListener('submit', async function(event) {
+                        event.preventDefault();
+            
+                        // Get values from the input fields
+                        const product_name = document.getElementById('product-name').value;
+                        const description = document.getElementById('description').value;
+                        const price = document.getElementById('price').value;
+                        const category = document.getElementById('category').value;
+                        const image = document.getElementById('product-image').files[0];
+            
+                        try {
+                            // Create a FormData object
+                            const formData = new FormData();
+                            formData.append('product_name', product_name);
+                            formData.append('description', description);
+                            formData.append('price', price);
+                            formData.append('category', category);
+                            formData.append('image', image);
+            
+                            // Send a POST request to the Flask API to add the product
+                            const response = await fetch('http://127.0.0.1:5000/add-product', {
+                                method: 'POST',
+                                body: formData
+                            });
+            
+                            // Parse the JSON response
+                            const data = await response.json();
+            
+                            if (response.ok) {
+                                // Show success alert
+                                alert('Product added successfully!');
+                                // Redirect to the home page after successful product addition
+                                window.location.href = 'home page.html';  // Redirect to home page HTML
+                            } else {
+                                // Display error message
+                                alert(data.error || 'Failed to add product.');
+                            }
+                        } catch (error) {
+                            alert('An error occurred: ' + error.message);
+                        }
+                    });
+                </script>    <!-- Footer -->
     <footer>
         <p>© 2024 DesigNest. All rights reserved.</p>
     </footer>

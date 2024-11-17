@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signup Page</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       background-color: #f4f4f4;
+    }
+
+    /* Header Section */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ff7f50;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 15px;
+    }
+
+    .search-bar input[type="text"] {
+      width: 100%;
+      padding: 8px 15px;
+      font-size: 18px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .search-bar input[type="text"]:focus {
+      outline: none;
+      border-color: #ff7f50;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header-icons a {
+      color: #333;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .header-icons a:hover {
+      color: #ff7f50;
     }
 
     .container {
@@ -18,6 +85,7 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       width: 400px;
+      margin-top: 100px; /* Adjusted to fit below the fixed header */
     }
 
     h1 {
@@ -25,9 +93,7 @@
       margin-bottom: 30px;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
+    input[type="text"], input[type="email"], input[type="password"] {
       width: 100%;
       padding: 15px;
       margin: 5px 0 20px 0;
@@ -57,32 +123,70 @@
   </style>
 </head>
 <body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">DesigNest</div>
+    <div class="header-icons">
+      <a href="home page.html">🏠 Home</a>
+      <a href="seller page.html">🏪 Sell</a>
+      <a href="cart page.html">🛒 Cart</a>
+      <a href="profile page.html">👤 Profile</a>
+      <a href="login page.html">🔑 Login</a>
+      <a href="signup page.html">📝 Signup</a>
+    </div>
+  </header>
+<br><br>
+  <!-- Signup Form Section -->
   <div class="container">
     <h1>Signup</h1>
-    <form action="home page.html"> <!-- Form action set to homepage for redirection -->
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div>
-        <label for="contact">Contact:</label>
-        <input type="text" id="contact" name="contact" required pattern="\d{10,}" title="Please enter a valid contact number with at least 10 digits.">
-      </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required minlength="6" title="Password must be at least 6 characters.">
-      </div>
-      <div>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required minlength="6">
-      </div>
+    <form id="signup-form">
+      <div><label for="name">Name:</label><input type="text" id="name" name="name" required></div>
+      <div><label for="contact">Contact:</label><input type="text" id="contact" name="contact" required pattern="\d{10,}"></div>
+      <div><label for="email">Email:</label><input type="email" id="email" name="email" required></div>
+      <div><label for="password">Password:</label><input type="password" id="password" name="password" required minlength="6"></div>
+      <div><label for="location">City:</label><input type="text" id="location" name="location" required></div>
+      <div><label for="state">State:</label><input type="text" id="state" name="state" required></div>
       <button type="submit">Signup</button>
       <p class="signup">Already have an account? <a href="login page.html">Login</a></p>
     </form>
   </div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      
+      // Get values from the input fields
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const location = document.getElementById('location').value;
+      const state = document.getElementById('state').value;
+      
+      try {
+        // Send a POST request to the Flask API for signup
+        const response = await fetch('http://127.0.0.1:5000/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, email, password, location, state })
+        });
+  
+        // Parse the JSON response
+        const data = await response.json();
+  
+        if (response.ok) {
+          // Redirect to the home page after successful signup
+          window.location.href = 'home page.html';  // Redirect to home page HTML
+        } else {
+          // Display error message
+          document.getElementById('message').textContent = data.error || 'Sign-up failed.';
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('message').textContent = 'An error occurred. Please try again.';
+      }
+    });
+  </script>
 </body>
 </html>

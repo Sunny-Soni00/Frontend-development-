@@ -17,7 +17,6 @@
             color: #333;
         }
 
-        /* Header Section */
         header {
             display: flex;
             justify-content: space-between;
@@ -49,7 +48,6 @@
             color: #ff7f50;
         }
 
-        /* Profile Section */
         .profile-container {
             display: flex;
             padding: 50px 10%;
@@ -89,20 +87,20 @@
         .profile-picture {
             width: 200px;
             height: 200px;
-            border: 4px solid #ff7f50; /* Adjusted border width to be more visible */
+            border: 4px solid #ff7f50;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-left: 80px;
             margin-top: 70px;
             overflow: hidden;
-            background-color: #fff; /* Ensures a consistent background */
+            background-color: #fff;
         }
 
         .profile-picture img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image fits the container without extra space */
+            object-fit: cover;
         }
 
     </style>
@@ -117,6 +115,8 @@
             <a href="seller page.html">🏪 Sell</a>
             <a href="cart page.html">🛒 Cart</a>
             <a href="profile page.html">👤 Profile</a>
+            <a href="login page.html">🔑 Login</a>
+            <a href="signup page.html">📝 Signup</a>
         </div>
     </header>
 
@@ -125,13 +125,16 @@
         <div class="profile-info">
             <h2>User Profile</h2>
             <label for="username">Username:</label>
-            <input type="text" id="username" value="Sunny" readonly>
+            <input type="text" id="username" readonly>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" value="Sunny@gmail.com" readonly>
+            <input type="email" id="email" readonly>
 
-            <label for="contact">Contact:</label>
-            <input type="text" id="contact" value="1234567890" readonly>
+            <label for="location">Location:</label>
+            <input type="text" id="location" readonly>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" readonly>
         </div>
 
         <div class="profile-picture">
